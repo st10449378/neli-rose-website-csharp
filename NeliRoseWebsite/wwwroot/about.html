@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<!--
+  about.html — About Us Page
+  Neli-Rose Retirement Home
+
+  Sections:
+  1. Navbar (shared via home.css)
+  2. Page Hero Banner
+  3. Breadcrumb navigation bar
+  4. Our Story (two-column text + image)
+  5. Mission, Vision, Values (3-card grid)
+  6. Milestone Timeline
+  7. FOUNDER SECTION (single person — POPIA compliant)
+  8. PHOTO GALLERY (4-image glimpse of the facility)
+  9. Accreditations
+  10. CTA Banner
+  11. Footer
+
+  Stylesheets: home.css (shared) + about.css (page-specific)
+  Scripts:     home.js (shared) + about.js (page-specific)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Neli-Rose Retirement Home</title>
+
+  <!-- Shared global stylesheet (colours, navbar, buttons, footer, etc.) -->
+  <link rel="stylesheet" href="home.css" />
+  <!-- Page-specific styles for about page components -->
+  <link rel="stylesheet" href="about.css" />
+
+  <!-- Google Fonts:
+       Cormorant Garamond — elegant serif for headings
+       DM Sans — clean modern sans-serif for body copy -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ============================================
+       NAVBAR
+       .scrolled is applied here by default (no hero
+       underneath) so the navbar always shows white
+       background on inner pages.
+       ============================================ -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+
+      <!-- Logo — uses mix-blend-mode:multiply to blend
+           white PNG background with the white navbar -->
+      <a href="home.html" class="nav-logo">
+        <img id="site-logo" src="Photos/Logo.png" alt="Neli-Rose Retirement Home Logo"
+             onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block'"/>
+        <!-- Fallback text if logo.png is missing -->
+        <span id="logo-text" style="display:none;" class="logo-fallback">Neli-Rose</span>
+      </a>
+
+      <!-- Desktop navigation links -->
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html" class="active">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+
+      <!-- CTA button — visible on desktop -->
+      <button class="nav-cta" onclick="location.href='contact.html'">Book a Visit</button>
+
+      <!-- Hamburger button — only shown on mobile via CSS -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile dropdown menu — shown when .open class is toggled by about.js -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="home.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </nav>
+
+
+  <!-- ============================================
+       PAGE HERO BANNER
+       Fixed-height banner with background image,
+       dark overlay, and centred heading text.
+       ============================================ -->
+  <section class="page-hero">
+    <!-- Background image set inline so it's easy to change per page -->
+    <div class="page-hero-bg"
+         style="background-image:url('Photos/photo10.jpeg');">
+    </div>
+    <!-- Dark overlay for text contrast — styled in about.css -->
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <span class="section-tag light">Our Story</span>
+      <h1>About <em>Neli-Rose</em></h1>
+      <p>Two decades of compassionate care, built on love, dignity, and dedication.</p>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       BREADCRUMB BAR
+       Shows the user's current location in the site
+       hierarchy. Helps with navigation and SEO.
+       ============================================ -->
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <a href="home.html">Home</a>
+      <span>/</span>
+      <span>About Us</span>
+    </div>
+  </div>
+
+
+  <!-- ============================================
+       OUR STORY SECTION
+       Two-column layout: text on left, image on right.
+       .reveal-left and .reveal-right animate in when
+       the section enters the viewport (via about.js).
+       ============================================ -->
+  <section class="story-section">
+    <div class="container two-col">
+
+      <!-- Left column: story text with scroll-in animation -->
+      <div class="reveal-left">
+        <span class="section-tag">Who We Are</span>
+        <h2>A Legacy of <em>Care and Compassion</em></h2>
+        <p>Neli-Rose Retirement Home was founded with a single, unwavering vision, to create a safe and nurturing environment where elderly individuals are treated with the respect, love, and dignity they deserve.</p>
+        <p>Established in 2015, our home has grown from a small family operation into a trusted institution serving over 100 residents and their families. Yet throughout this growth, we have never lost sight of what makes us special: the genuine, heartfelt care we provide every single day.</p>
+        <p>Our name, Neli-Rose, is a symbol of beauty, resilience, and grace, qualities we see in each and every one of our residents. Like a rose, the elderly deserve to be nurtured, appreciated, and allowed to bloom in their own time and their own way.</p>
+      </div>
+
+      <!-- Right column: facility image with hover zoom -->
+      <div class="reveal-right">
+        <div class="img-frame">
+          <img src="Photos/photo11.jpeg"
+               alt="Neli-Rose Retirement Home exterior" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       MISSION, VISION, VALUES
+       Three equal cards in a CSS grid.
+       Each card has a coloured top border for
+       visual differentiation.
+       ============================================ -->
+  <section class="mvv-section">
+    <div class="container">
+      <div class="mvv-grid">
+
+        <!-- Mission Card -->
+        <div class="mvv-card reveal-up" style="--delay:0.1s">
+          <div class="mvv-icon mission">
+            <!-- Inline SVG clock icon — no external dependency -->
+            <svg viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
+              <path d="M24 14v10l6 4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Our Mission</h3>
+          <p>To provide exceptional, person-centred care that enhances the quality of life for every resident, honouring their individuality, preserving their dignity, and supporting their families through every stage of the ageing journey.</p>
+        </div>
+
+        <!-- Vision Card -->
+        <div class="mvv-card reveal-up" style="--delay:0.2s">
+          <div class="mvv-icon vision">
+            <svg viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="22" r="10" stroke="currentColor" stroke-width="2"/>
+              <circle cx="24" cy="22" r="3" fill="currentColor"/>
+              <path d="M8 22c0-8.8 7.2-16 16-16s16 7.2 16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Our Vision</h3>
+          <p>To be a big retirement home in South Africa, recognised for outstanding care, innovation in senior wellbeing, and an unwavering commitment to the happiness of those entrusted to our care.</p>
+        </div>
+
+        <!-- Values Card -->
+        <div class="mvv-card reveal-up" style="--delay:0.3s">
+          <div class="mvv-icon values">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M24 8l4 8 9 1.3-6.5 6.3 1.5 8.9L24 28l-8 4.5 1.5-8.9L11 17.3 20 16z"
+                    stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Our Values</h3>
+          <!-- Values rendered as a clean bullet list -->
+          <ul class="values-list">
+            <li>Compassion &amp; Empathy</li>
+            <li>Dignity &amp; Respect</li>
+            <li>Integrity &amp; Transparency</li>
+            <li>Excellence in Care</li>
+            <li>Continuous Learning</li>
+            <li>Family Partnership</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+ <!-- ============================================
+       FOUNDER SECTION
+      
+       ============================================ -->
+  <section class="founder-section">
+    <div class="container">
+ 
+      <div class="section-header reveal-up">
+        <span class="section-tag">Our Founder</span>
+        <h2>The Heart <em>Behind Neli-Rose</em></h2>
+      </div>
+ 
+      <!-- .founder-card is a CSS grid: photo column (left) | bio column (right) -->
+      <div class="founder-card reveal-up">
+ 
+       
+        <div class="founder-photo">
+          <img
+            src="Photos/Founder.jpeg"
+            alt="Founder of Neli-Rose Retirement Home"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+          />
+          
+          <div class="founder-photo-placeholder" style="display:none">
+            <svg viewBox="0 0 80 80" fill="none">
+              <circle cx="40" cy="30" r="18" stroke="currentColor" stroke-width="2"/>
+              <path d="M10 72c0-16.6 13.4-30 30-30s30 13.4 30 30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+ 
+    
+        <div class="founder-bio">
+ 
+         
+          <h3>Beverly Kwonglee and Rodwell Kwonglee</h3>
+          <span class="founder-role">Founders &amp; Directors, Neli-Rose Retirement Home</span>
+ 
+          
+          <blockquote class="founder-quote">
+            "Every person who walks through our doors carries a lifetime of stories, wisdom, and love.
+             Our responsibility is to honour that, to make sure their later years are lived with
+             the same joy and dignity they deserve."
+          </blockquote>
+ 
+         
+          <p>Our founders established Neli-Rose Retirement Home with one clear purpose: to create a space where ageing is embraced with dignity, warmth, and genuine compassion. Their vision continues to guide everything we do at Neli-Rose every single day.</p>
+ 
+        </div>
+ 
+      </div>
+    </div>
+  </section>
+ 
+
+
+  <!-- ============================================
+       PHOTO GALLERY — "A Glimpse of Our Home"
+       
+       ============================================ -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Our Home</span>
+        <h2>A Glimpse of <em>Life at Neli-Rose</em></h2>
+        <p>Warm spaces, vibrant gardens, and a community full of life — this is where your loved one will call home.</p>
+      </div>
+
+      <!-- Asymmetric 4-image grid defined in about.css
+           First image spans 2 rows for visual interest -->
+      <div class="gallery-grid reveal-up">
+
+        <!-- Photo 1: large feature image (spans 2 rows) -->
+        <div class="gallery-item gallery-feature">
+         
+          <img src="Photos/photo5.jpeg"
+               alt="Comfortable resident lounge area" />
+          <div class="gallery-overlay">
+            <span>Resident Lounge</span>
+          </div>
+        </div>
+
+        <!-- Photo 2: top-right -->
+        <div class="gallery-item">
+         
+          <img src="Photos/photoo12.jpeg"
+               alt="Beautiful garden courtyard" />
+          <div class="gallery-overlay">
+            <span>Garden Courtyard</span>
+          </div>
+        </div>
+
+        <!-- Photo 3: bottom-right top -->
+        <div class="gallery-item">
+         
+          <img src="Photos/photo7.jpeg"
+               alt="Book shelf for reading" />
+          <div class="gallery-overlay">
+            <span>Book shelf</span>
+          </div>
+        </div>
+
+        <!-- Photo 4: bottom-right bottom -->
+        <div class="gallery-item">
+         
+          <img src="Photos/photo6.jpeg"
+               alt="Television area for residents" />
+          <div class="gallery-overlay">
+            <span>Television area</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA below gallery to prompt a tour -->
+      <div class="gallery-cta reveal-up">
+        <p>Want to see more? Come and visit us in person.</p>
+        <a href="contact.html" class="btn-primary">Book a Tour</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       ACCREDITATIONS
+       Four cards showing official registrations
+       and certifications.
+       ============================================ -->
+  <section class="accred-section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Credentials</span>
+        <h2>Registered and Accredited</h2>
+      </div>
+      <div class="accred-grid reveal-up">
+        <div class="accred-item">
+          <div class="accred-badge">DOH</div>
+          <p>Department of Health Registered</p>
+        </div>
+        
+  </section>
+
+
+  <!-- ============================================
+       CTA BANNER
+       Green gradient strip with two action buttons.
+       Defined in home.css (.cta-banner).
+       ============================================ -->
+  <section class="cta-banner">
+    <div class="cta-inner">
+      <h2>Come and Experience Neli-Rose in Person</h2>
+      <p>We invite you to visit us, see our home, and experience why so many families trust us with those they love most.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn-primary">Schedule a Tour</a>
+        <a href="services.html" class="btn-outline-light">View Our Services</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       FOOTER
+       Shared footer across all pages.
+       Defined in home.css (.footer).
+       ============================================ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <!-- Logo inverted to white via CSS filter in home.css -->
+        <img src="Photos/Logo.png" alt="Neli-Rose Retirement Home" class="footer-logo"
+             onerror="this.style.display='none'" />
+        <p>Neli-Rose Retirement Home<br/><em>Where care is care giver</em></p>
+        
+      </div>
+      <div class="footer-nav">
+        <h4>Quick Links</h4>
+        <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+     <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>Phone: +27  84 587 3631</p>
+        <p>Email: colette@nelirose.co.za</p>
+        <p>Address: 39 Rooihaaskoppie Ave, East Lynne, Pretoria, 0186<br/>South Africa</p>
+      </div>
+
+      <div class="footer-hours">
+        <h4>Visiting Hours</h4>
+        <p>Monday – Friday<br/>09:00 – 18:00</p>
+        <p>Saturday – Sunday<br/>10:00 – 16:00</p>
+        <p class="emerg">Emergency: 24/7</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Neli-Rose Retirement Home. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <!-- Shared JavaScript (navbar, reveal animations, etc.) -->
+  <script src="home.js"></script>
+  <!-- Page-specific JavaScript for About page -->
+  <script src="about.js"></script>
+
+</body>
+</html>

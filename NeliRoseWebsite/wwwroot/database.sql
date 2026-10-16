@@ -1,0 +1,11 @@
+CREATE DATABASE neli_rose;
+USE neli_rose;
+CREATE TABLE contacts(
+id INT AUTO_INCREMENT PRIMARY KEY,
+first_name VARCHAR(100),
+last_name VARCHAR(100),
+email VARCHAR(150),
+phone VARCHAR(50),
+message TEXT,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

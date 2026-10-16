@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services | Neli-Rose Retirement Home</title>
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="about.css" />
+  <link rel="stylesheet" href="services.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="home.html" class="nav-logo">
+        <img src="Photos/Logo.png" alt="Neli-Rose Logo" onerror="this.style.display='none'"/>
+        <span class="logo-fallback" style="display:none">Neli-Rose</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <button class="nav-cta" onclick="location.href='contact.html'">Book a Visit</button>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="home.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1576765607925-e3ef462f4e76?w=1400&q=80')"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <span class="section-tag light">Comprehensive Care</span>
+      <h1>Our <em>Services</em></h1>
+      <p>Everything your loved one needs, under one caring roof.</p>
+    </div>
+  </section>
+
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <a href="home.html">Home</a> <span>/</span> <span>Services</span>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section class="services-intro">
+    <div class="container text-center">
+      <span class="section-tag reveal-up">What We Provide</span>
+      <h2 class="reveal-up" style="--delay:0.1s">Care Designed Around Each Individual</h2>
+      <p class="reveal-up" style="--delay:0.2s">At Neli-Rose, we understand that no two residents are the same. That is why our services are flexible, personalised, and continuously reviewed to ensure each person in our care receives exactly what they need to thrive.</p>
+    </div>
+  </section>
+
+  <!-- SERVICE TABS -->
+  <section class="services-tabs-section">
+    <div class="container">
+      <div class="tabs-bar">
+        <button class="tab-btn active" data-tab="nursing">Nursing Care</button>
+        <button class="tab-btn" data-tab="personal">Personal Care</button>
+        <button class="tab-btn" data-tab="memory">Memory Care</button>
+        <button class="tab-btn" data-tab="medical">Medical</button>
+        <button class="tab-btn" data-tab="nutrition">Nutrition</button>
+        <button class="tab-btn" data-tab="accommodation">Accommodation</button>
+      </div>
+
+      <div class="tab-content active" id="tab-nursing">
+        <div class="service-detail two-col">
+          <div class="service-detail-image reveal-left">
+            <img src="Photos/photo2.jpeg" alt="Nursing care" />
+          </div>
+          <div class="service-detail-text reveal-right">
+            <span class="section-tag">24/7 Nursing Care</span>
+            <h2>Professional Nursing <em>Around the Clock</em></h2>
+            <p>Our team of registered nurses and auxiliary nurses are on duty 24 hours a day, 7 days a week. Whether it is routine monitoring, medication administration, or responding to a health concern, our nursing staff are always present and prepared.</p>
+            <ul class="service-features">
+              <li>Registered and qualified nursing staff on all shifts</li>
+              <li>Regular health monitoring and vital signs assessments</li>
+              <li>Medication management and administration</li>
+              <li>Wound care and post-operative support</li>
+              <li>Emergency response protocols and equipment</li>
+            
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-personal">
+        <div class="service-detail two-col">
+          <div class="service-detail-image reveal-left">
+            <img src="Photos/personalcare.jpeg" alt="Personal care" />
+          </div>
+          <div class="service-detail-text reveal-right">
+            <span class="section-tag">Personal Care</span>
+            <h2>Dignity in Every <em>Daily Moment</em></h2>
+            <p>Our personal care services are designed to support residents with activities of daily living while preserving their dignity, independence, and sense of self. Our caregivers are trained to provide compassionate, respectful assistance.</p>
+            <ul class="service-features">
+              <li>Bathing, showering, and personal hygiene</li>
+              <li>Dressing and grooming assistance</li>
+              <li>Mobility support and transfer assistance</li>
+              <li>Continence management</li>
+              <li>Oral hygiene and foot care</li>
+              <li>Personalised care plans reviewed regularly</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-memory">
+        <div class="service-detail two-col">
+          <div class="service-detail-image reveal-left">
+            <img src="Photos/photo16.jpeg" alt="Memory care" />
+          </div>
+          <div class="service-detail-text reveal-right">
+            <span class="section-tag">Memory Care</span>
+            <h2>Specialised Support for <em>Cognitive Wellbeing</em></h2>
+            <p>Our dedicated Memory Care unit provides a secure, structured, and stimulating environment for residents living with dementia, Alzheimer's disease, or other memory-related conditions. We focus on maintaining quality of life, independence, and dignity.</p>
+            <p>Through activities like arts and crafts,such as the handmade crochet pieces shown,we encourage creativity, gentle stimulation, and emotional connection. These familiar, hands-on activities help residents stay engaged while bringing comfort and joy.</p>
+            <ul class="service-features">
+              <li>Secure, purpose-designed memory care unit</li>
+              <li>Specially trained dementia care staff</li>
+              <li>Engaging cognitive stimulation activities, including creative crafts</li>
+              <li>Structured daily routines to reduce anxiety</li>
+              <li>Family counselling and support groups</li>
+              <li>Reminiscence therapy and sensory activities</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-medical">
+        <div class="service-detail two-col">
+          <div class="service-detail-image reveal-left">
+            <img src="Photos/medical services.jpeg" alt="Medical care" />
+          </div>
+          <div class="service-detail-text reveal-right">
+            <span class="section-tag">Medical Services</span>
+            <h2>Health Monitoring and <em>Medical Support</em></h2>
+            <p>We work closely with GPs, specialists, and allied health professionals to ensure comprehensive medical care for every resident. Regular health assessments and proactive monitoring ensure issues are identified and addressed early.</p>
+            <ul class="service-features">
+              <li>Regular GP visits and health assessments</li>
+              <li>Physiotherapy and occupational therapy</li>
+              <li>Podiatry, optometry, and dental referrals</li>
+              <li>Electronic health records and telehealth</li>
+              <li>Speech therapy and swallowing assessment</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-nutrition">
+        <div class="service-detail two-col">
+          <div class="service-detail-image reveal-left">
+            <img src="Photos/nutrition.jpeg" alt="Nutrition" />
+          </div>
+          <div class="service-detail-text reveal-right">
+            <span class="section-tag">Nutrition & Meals</span>
+            <h2>Nourishing Every Body <em>and Soul</em></h2>
+            <p>Food is central to wellbeing and enjoyment. Our head chef and dietitian work together to create menus that are nutritionally balanced, culturally sensitive, and genuinely delicious. Mealtimes are social occasions we celebrate every day.</p>
+            <ul class="service-features">
+              <li>Three chef-prepared meals and two snacks daily</li>
+              <li>Dietitian-approved menus</li>
+              <li>Accommodates all dietary needs and allergies</li>
+              <li>Cultural and religious dietary requirements respected</li>
+              <li>Therapeutic diets (diabetic, renal, cardiac-friendly)</li>
+              <li>Texture-modified meals for swallowing difficulties</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-accommodation">
+        <div class="service-detail two-col">
+          <div class="service-detail-image reveal-left">
+            <img src="Photos/photoo12.jpeg" alt="Accommodation" />
+          </div>
+          <div class="service-detail-text reveal-right">
+            <span class="section-tag">Accommodation</span>
+            <h2>A Place That <em>Truly Feels Like Home</em></h2>
+            <p>Our rooms and communal areas are thoughtfully designed to be comfortable, safe, and homely. We encourage residents to personalise their rooms and consider Neli-Rose their home — because it is.</p>
+            <ul class="service-features">
+              <li>Single and shared room options available</li>
+              <li>En-suite bathroom facilities</li>
+              <li>Spacious lounges and garden areas</li>
+              <li>All utilities, laundry, and housekeeping included</li>
+              <li>Emergency call systems in all rooms</li>
+              <li>Wi-Fi and entertainment facilities</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="cta-banner">
+    <div class="cta-inner">
+      <h2>Not Sure Which Service is Right?</h2>
+      <p>Our care team is ready to guide you through the options and help you find the best fit for your loved one.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn-primary">Speak to Our Team</a>
+      
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="Photos/Logo.png" alt="Neli-Rose" class="footer-logo" onerror="this.style.display='none'" />
+        <p>Neli-Rose Retirement Home<br/><em>Where care is care giver</em></p>
+       
+      </div>
+      <div class="footer-nav">
+        <h4>Quick Links</h4>
+        <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+       <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>Phone: +27  84 587 3631  </p>
+        <p>Email: colette@nelirose.co.za</p>
+        <p>Address: 39 Rooihaaskoppie Ave, East Lynne, Pretoria, 0186<br/>South Africa</p>
+      </div>
+      <div class="footer-hours">
+        <h4>Visiting Hours</h4>
+        <p>Monday – Friday<br/>09:00 – 18:00</p>
+        <p>Saturday – Sunday<br/>10:00 – 16:00</p>
+        <p class="emerg">Emergency: 24/7</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Neli-Rose Retirement Home. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="home.js"></script>
+  <script src="services.js"></script>
+</body>
+</html>

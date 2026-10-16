@@ -1,0 +1,405 @@
+/* =============================================
+   NELI-ROSE — ABOUT.CSS
+   Page-specific styles for the About Us page.
+   Loaded AFTER home.css so these rules can
+   override shared styles where needed.
+   ============================================= */
+
+
+/* =============================================
+   PAGE HERO BANNER
+   Used on all inner pages (About, Services, etc.)
+   A fixed-height banner with a background image,
+   dark overlay, and centred text content.
+   ============================================= */
+.page-hero {
+  position: relative;
+  height: 55vh;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 80px;  /* prevents content hiding behind fixed navbar */
+  overflow: hidden;
+}
+
+/* Background image div — separate from content so the
+   hover scale does NOT zoom the text */
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);       /* slight pre-zoom for the hover effect */
+  transition: transform 6s ease;
+}
+.page-hero:hover .page-hero-bg { transform: scale(1); }  /* zooms out on hover */
+
+/* Dark green gradient overlay for text readability */
+.page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(15,40,20,0.78) 0%, rgba(40,80,50,0.6) 100%);
+}
+
+/* Text block — z-index ensures it sits above both bg and overlay */
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+.page-hero-content h1   { color: white; margin: 0.5rem 0 1rem; }
+.page-hero-content p    { color: rgba(255,255,255,0.8); font-size: 1.1rem; }
+.page-hero-content em   { color: var(--green-light); }
+
+
+/* =============================================
+   BREADCRUMB NAVIGATION BAR
+   Sits below the page hero to show location
+   within the site. Helps with usability and SEO.
+   ============================================= */
+.breadcrumb-bar {
+  background: var(--off-white);
+  border-bottom: 1px solid #ebebeb;
+  padding: 0.75rem 0;
+}
+.breadcrumb-bar .container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+.breadcrumb-bar a               { color: var(--green-primary); }
+.breadcrumb-bar span:last-child { color: var(--text); font-weight: 500; }
+
+
+/* =============================================
+   OUR STORY SECTION
+   Two-column layout (shared .two-col grid from
+   home.css). This section just adds padding
+   and paragraph spacing.
+   ============================================= */
+.story-section { padding: 7rem 0; background: var(--white); }
+.story-section p { color: var(--text-light); margin-bottom: 1.2rem; font-size: 1.02rem; }
+
+
+/* =============================================
+   MISSION VISION VALUES (MVV) GRID
+   Three equal cards in a CSS grid.
+   Each card has a coloured top border to
+   visually distinguish the three pillars.
+   ============================================= */
+.mvv-section { padding: 6rem 0; background: var(--off-white); }
+
+.mvv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 equal columns on desktop */
+  gap: 2rem;
+}
+
+/* Base card styles */
+.mvv-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border-top: 4px solid transparent;  /* overridden per card below */
+}
+.mvv-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Individual card accent colours */
+.mvv-card:nth-child(1) { border-top-color: var(--green-primary); }  /* Mission — green */
+.mvv-card:nth-child(2) { border-top-color: var(--gold); }           /* Vision — gold */
+.mvv-card:nth-child(3) { border-top-color: var(--red-accent); }     /* Values — red */
+
+/* Icon box — coloured background changes per card type */
+.mvv-icon {
+  width: 64px; height: 64px;
+  border-radius: 18px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.mvv-icon svg { width: 32px; height: 32px; }
+
+/* Three icon colour schemes */
+.mvv-icon.mission { background: var(--green-pale);   color: var(--green-primary); }
+.mvv-icon.vision  { background: #fdf3e0;             color: var(--gold); }
+.mvv-icon.values  { background: #fdecea;             color: var(--red-accent); }
+
+.mvv-card h3 { margin-bottom: 1rem; }
+.mvv-card p  { color: var(--text-light); font-size: 0.97rem; line-height: 1.8; }
+
+/* Bullet list for values — custom red dot markers */
+.values-list { list-style: none; padding: 0; margin: 0; }
+.values-list li {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  padding: 0.4rem 0 0.4rem 1.2rem;
+  border-bottom: 1px solid #f0f0f0;
+  position: relative;
+}
+/* Custom red dot bullet using ::before pseudo-element */
+.values-list li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--red-accent);
+}
+.values-list li:last-child { border-bottom: none; }
+
+
+
+/* =============================================
+   FOUNDER SECTION
+   Clean two-column card: photo on the left,
+   bio text on the right.
+   Uses CSS Grid with fixed photo column width.
+   ============================================= */
+.founder-section {
+  padding: 6rem 0;
+  background: var(--cream);
+}
+ 
+/* Two-column grid:
+   - Left column: fixed 300px for the photo
+   - Right column: remaining space for the bio
+   - align-items: center so both columns sit
+     vertically centred against each other */
+.founder-card {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 4rem;
+  align-items: center;           /* vertical centre alignment */
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  box-shadow: var(--shadow-md);
+  margin-top: 1rem;
+  max-width: 900px;              /* constrain width so it doesn't stretch too wide */
+  margin-left: auto;
+  margin-right: auto;
+}
+ 
+/* LEFT COLUMN: photo wrapper */
+.founder-photo {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;              /* clips the image to the rounded corners */
+}
+.founder-photo img {
+  width: 100%;
+  aspect-ratio: 1;               /* square crop */
+  object-fit: cover;
+  object-position: top;          /* focus on the person's face */
+  border-radius: var(--radius-lg);
+  display: block;
+}
+ 
+/* Placeholder shown if photo file is missing */
+.founder-photo-placeholder {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--radius-lg);
+  background: var(--green-pale);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--green-primary);
+}
+.founder-photo-placeholder svg  { width: 60px; height: 60px; opacity: 0.4; }
+.founder-photo-placeholder span { font-size: 0.82rem; font-style: italic; color: var(--text-light); }
+ 
+/* RIGHT COLUMN: bio text */
+.founder-bio h3 {
+  font-size: 1.7rem;
+  margin-bottom: 0.3rem;
+}
+ 
+/* Green uppercase role label */
+.founder-role {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green-primary);
+  margin-bottom: 1.5rem;
+}
+ 
+/* Pull-quote with left green border */
+.founder-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--dark-mid);
+  line-height: 1.8;
+  border-left: 4px solid var(--green-primary);
+  padding-left: 1.2rem;
+  margin: 0 0 1.2rem;
+}
+ 
+/* Short bio paragraph */
+.founder-bio p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0;
+}
+ 
+
+/* =============================================
+   PHOTO GALLERY
+   Asymmetric 2x2 CSS Grid where the first image
+   spans 2 rows for visual impact. Images have a
+   hover overlay showing a caption.
+   ============================================= */
+.gallery-section {
+  padding: 7rem 0;
+  background: var(--off-white);
+}
+
+/* Grid layout:
+   - 2 columns, 2 rows
+   - First item spans both rows (.gallery-feature)
+   - Row height is fixed at 280px for consistency */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 280px 280px;
+  gap: 1rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+/* Base gallery item — clips image and positions overlay */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;           /* fills container, crops if needed */
+  transition: transform 0.5s ease;
+}
+/* Scale image on hover for a zoom effect */
+.gallery-item:hover img { transform: scale(1.08); }
+
+/* Large feature image spans both rows in the left column */
+.gallery-feature {
+  grid-row: 1 / 3;  /* spans row 1 and row 2 */
+}
+
+/* Dark overlay that slides up on hover, revealing caption */
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15,40,20,0.75) 0%, transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+  opacity: 0;           /* hidden by default */
+  transition: opacity 0.35s ease;
+}
+/* Fade in overlay on hover (desktop) or when .touched class
+   is added by about.js (touch/mobile devices) */
+.gallery-item:hover .gallery-overlay,
+.gallery-item.touched .gallery-overlay { opacity: 1; }
+
+/* Caption text inside the overlay */
+.gallery-overlay span {
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+}
+
+/* CTA below the gallery grid */
+.gallery-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.gallery-cta p { color: var(--text-light); font-size: 1.02rem; }
+
+
+/* =============================================
+   ACCREDITATIONS GRID
+   4 equal-width cards showing certifications.
+   ============================================= */
+.accred-section { padding: 6rem 0; background: var(--white); }
+
+.accred-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 1rem;
+}
+.accred-item {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  border: 1px solid #eee;
+  transition: var(--transition);
+}
+.accred-item:hover {
+  border-color: var(--green-primary);
+  box-shadow: var(--shadow-md);
+}
+/* Large text abbreviation as the badge */
+.accred-badge {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem; font-weight: 700;
+  color: var(--green-primary);
+  margin-bottom: 1rem;
+}
+.accred-item p { font-size: 0.88rem; color: var(--text-light); margin: 0; }
+
+
+/* =============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================= */
+
+/* Tablet — stack MVV and accred to 1 column; timeline simplified */
+@media (max-width: 1024px) {
+  .mvv-grid    { grid-template-columns: 1fr; }
+  .accred-grid { grid-template-columns: repeat(2, 1fr); }
+  .founder-card { grid-template-columns: 1fr; gap: 3rem; }
+  .founder-photo img { max-width: 320px; margin: 0 auto; }
+}
+
+/* Mobile — fully stack all layouts */
+@media (max-width: 768px) {
+  /* Timeline collapses to left-aligned list */
+  .timeline::before           { left: 20px; }
+  .timeline-item,
+  .timeline-item:nth-child(odd) { flex-direction: column; }
+  .timeline-dot               { left: 20px; }
+  .timeline-year              { width: 100%; text-align: left !important; padding-left: 50px; font-size: 1.4rem; }
+  .timeline-content           { width: 100%; text-align: left !important; margin-left: 50px; }
+  .accred-grid                { grid-template-columns: 1fr 1fr; }
+
+  /* Gallery stacks to single column on mobile */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 240px 240px 240px 240px;
+  }
+  .gallery-feature { grid-row: auto; }
+  .gallery-overlay { opacity: 1; }  /* always show captions on mobile */
+}

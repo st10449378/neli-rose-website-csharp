@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neli-Rose Retirement Home | Where Care is Care Giver</title>
+  <link rel="stylesheet" href="home.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="home.html" class="nav-logo">
+        <img id="site-logo" src="Photos/Logo.png" alt="Neli-Rose Logo" onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block'"/>
+        <span id="logo-text" style="display:none;" class="logo-fallback">Neli-Rose</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="home.html" class="active">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <button class="nav-cta" onclick="location.href='contact.html'">Book a Visit</button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="home.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+     <a href="contact.html">Contact Us</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Trusted Senior Care Since 2015</div>
+      <h1 class="hero-title">Where Every Day<br/><em>Feels Like Home</em></h1>
+      <p class="hero-sub">A place of warmth, dignity, and compassionate care , tailored to the unique needs of every resident at Neli-Rose Retirement Home.</p>
+      <div class="hero-actions">
+        <a href="services.html" class="btn-primary">Explore Our Care</a>
+        <a href="contact.html" class="btn-outline">Schedule a Tour</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <section class="stats-strip">
+    <div class="stat-item">
+      <span class="stat-num" data-target="10">0</span><span class="stat-unit">+</span>
+      <p>Years of Care</p>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-num" data-target="50">0</span><span class="stat-unit">+</span>
+      <p>Happy Residents</p>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-num" data-target="39">0</span><span class="stat-unit">+</span>
+      <p>Dedicated Staff</p> 
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-num" data-target="100">0</span><span class="stat-unit">%</span>
+      <p>Family Satisfaction</p>
+    </div>
+  </section>
+
+  <!-- WELCOME -->
+  <section class="welcome-section">
+    <div class="container two-col">
+      <div class="welcome-image-block reveal-left">
+        <div class="img-frame">
+          <img src="Photos/photo9.jpeg" alt="Caring staff with resident" />
+          <div class="img-badge">
+            <span class="badge-num">10+</span>
+            <span class="badge-label">Years of Excellence</span>
+          </div>
+        </div>
+      </div>
+      <div class="welcome-text reveal-right">
+        <span class="section-tag">Welcome to Neli-Rose</span>
+        <h2>A Home Built on <em>Compassion</em> and Dignity</h2>
+        <p>At Neli-Rose Retirement Home, we believe that ageing is a beautiful journey, one that deserves to be celebrated with grace, warmth, and the highest standard of care. Our facility provides a safe, nurturing environment where residents are treated with the respect and love they deserve.</p>
+        <p>Our dedicated team of healthcare professionals, caregivers, and support staff are committed to enhancing the quality of life for every individual in our care, while ensuring peace of mind for their families.</p>
+        <a href="about.html" class="btn-primary">Learn More About Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES PREVIEW -->
+  <section class="services-preview">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">What We Offer</span>
+        <h2>Comprehensive Care Services</h2>
+        <p>From daily assistance to specialised medical support, we provide a full spectrum of services designed to keep your loved ones healthy, happy, and engaged.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal-up" style="--delay:0.1s">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2"/><path d="M24 14v10l6 4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>24/7 Nursing Care</h3>
+          <p>Round-the-clock professional nursing support to ensure your loved one's health and comfort at all times.</p>
+          <a href="services.html" class="card-link">Learn more</a>
+        </div>
+        <div class="service-card reveal-up" style="--delay:0.2s">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M24 8c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16S32.8 8 24 8z" stroke="currentColor" stroke-width="2"/><path d="M24 18v6l4 2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Personal Care</h3>
+          <p>Dignified assistance with daily activities including bathing, dressing, grooming, and mobility support.</p>
+          <a href="services.html" class="card-link">Learn more</a>
+        </div>
+        <div class="service-card reveal-up" style="--delay:0.3s">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="10" y="14" width="28" height="22" rx="3" stroke="currentColor" stroke-width="2"/><path d="M17 14V12a7 7 0 0114 0v2" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="25" r="4" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3>Memory Care</h3>
+          <p>Specialised programmes and environments designed to support residents living with dementia or Alzheimer's.</p>
+          <a href="services.html" class="card-link">Learn more</a>
+        </div>
+        <div class="service-card reveal-up" style="--delay:0.4s">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M14 24c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10-10-4.5-10-10z" stroke="currentColor" stroke-width="2"/><path d="M24 18v6M21 24h6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Health Monitoring</h3>
+          <p>Regular health assessments, medication management, and coordination with external medical professionals.</p>
+          <a href="services.html" class="card-link">Learn more</a>
+        </div>
+        <div class="service-card reveal-up" style="--delay:0.5s">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M12 36c2-6 6-10 12-10s10 4 12 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="20" r="6" stroke="currentColor" stroke-width="2"/><path d="M34 26c3 1 5 3 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M14 26c-3 1-5 3-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Engaging Activities</h3>
+          <p>A vibrant calendar of social, recreational, and therapeutic activities to keep residents active and connected.</p>
+          <a href="services.html" class="card-link">Learn more</a>
+        </div>
+        <div class="service-card reveal-up" style="--delay:0.6s">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M8 20h32M8 28h32M16 12v24M32 12v24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Nutritious Meals</h3>
+          <p>Chef-prepared, nutritionally balanced meals tailored to individual dietary needs and personal preferences.</p>
+          <a href="services.html" class="card-link">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="why-section">
+    <div class="container">
+      <div class="why-inner">
+        <div class="why-text reveal-left">
+          <span class="section-tag light">Why Families Choose Us</span>
+          <h2>Care That Goes Beyond the Expected</h2>
+          <ul class="why-list">
+            <li>
+              <div class="why-dot"></div>
+              <div>
+                <strong>Person-Centred Approach</strong>
+                <p>Every care plan is individually tailored to the resident's physical, emotional, and social needs.</p>
+              </div>
+            </li>
+            <li>
+              <div class="why-dot"></div>
+              <div>
+                <strong>Family Transparency</strong>
+                <p>Regular updates, open visiting hours, and ongoing communication keep families informed and at ease.</p>
+              </div>
+            </li>
+            <li>
+              <div class="why-dot"></div>
+              <div>
+                <strong>Safe, Modern Facilities</strong>
+                <p>Our home is purpose-built for comfort and safety, with modern amenities and beautiful communal spaces.</p>
+              </div>
+            </li>
+            <li>
+              <div class="why-dot"></div>
+              <div>
+                <strong>Qualified Professional Team</strong>
+                <p>All our staff are certified, continuously trained, and genuinely passionate about senior care.</p>
+              </div>
+            </li>
+          </ul>
+        
+        </div>
+        <div class="why-image reveal-right">
+          <img src="Photos/photo14.jpeg" alt="Staff and residents" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="cta-inner">
+      <h2>Ready to Give Your Loved One the Best Care?</h2>
+      <p>Book a personal tour today and experience the Neli-Rose difference.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn-primary">Book a Tour</a>
+        <a href="tel:+27  84 587 3631" class="btn-outline-light">Call Us Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="Photos/Logo.png" alt="Neli-Rose" class="footer-logo" onerror="this.style.display='none'" />
+        <p>Neli-Rose Retirement Home<br/><em>Where care is care giver</em></p>
+        
+      </div>
+      <div class="footer-nav">
+        <h4>Quick Links</h4>
+        <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>Phone: +27  84 587 3631  </p>
+        <p>Email: colette@nelirose.co.za</p>
+        <p>Address: 39 Rooihaaskoppie Ave, East Lynne, Pretoria, 0186<br/>South Africa</p>
+      </div>
+      <div class="footer-hours">
+        <h4>Visiting Hours</h4>
+        <p>Monday – Friday<br/>09:00 – 18:00</p>
+        <p>Saturday – Sunday<br/>10:00 – 16:00</p>
+        <p class="emerg">Emergency: 24/7</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Neli-Rose Retirement Home. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="home.js"></script>
+</body>
+</html>
